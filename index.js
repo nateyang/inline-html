@@ -12,7 +12,7 @@ module.exports = function () {
 		html = html.replace(reg, function (match,sub1,sub2,index) {
 			if (!sub2) return match;
 
-			var tplPath = path.resolve(file.path,sub2),
+			var tplPath = path.resolve(path.dirname(file.path),sub2),
 				content;
 
 			if (!fs.existsSync(tplPath)) return match;
